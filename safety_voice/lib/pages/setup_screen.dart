@@ -22,10 +22,10 @@ appBar: PreferredSize(
   child: AppBar(
     automaticallyImplyLeading: false, // 뒤로가기 버튼 제거
     title:  Text(
-      '쀼의 세계님의 설정 현황',
+      '이대광님의 설정 현황',
          style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: MediaQuery.of(context).size.width * 0.07,
+              fontSize: MediaQuery.of(context).size.width * 0.05,
             ),
     ),
     backgroundColor: Colors.white,
@@ -76,7 +76,7 @@ appBar: PreferredSize(
       Image.asset(
         'assets/safety.png', // 안전지대 위치 이미지 경로
         width: 87, // 이미지 크기
-        height: 25, // 이미지 크기
+        height: 20, // 이미지 크기
       ),
       
       // 빈 공간: 이미지와 Switch 사이의 공간을 유지하기 위해
@@ -124,7 +124,7 @@ appBar: PreferredSize(
       Image.asset(
         'assets/word.png', // 안전지대 위치 이미지 경로
 
-        height: 25, // 이미지 크기
+        height: 20, // 이미지 크기
       ),
       
       // 빈 공간: 이미지와 Switch 사이의 공간을 유지하기 위해
@@ -171,7 +171,7 @@ Container(
       Image.asset(
         'assets/state.png', // 안전지대 위치 이미지 경로
 
-        height: 25, // 이미지 크기
+        height: 20, // 이미지 크기
       ),
       
       // 빈 공간: 이미지와 텍스트 사이의 공간을 유지하기 위해
@@ -187,7 +187,7 @@ Container(
  '안전지대 1번', 
  style: TextStyle(
    color: Colors.black,
-   fontSize: 25, // 글자 크기 축소
+   fontSize: 20, // 글자 크기 축소
  )
 ),
    
@@ -222,7 +222,7 @@ Container(
       Image.asset(
         'assets/safelocation.png', // 안전지대 위치 이미지 경로
    
-        height: 25, // 이미지 크기
+        height: 20, // 이미지 크기
       ),
       
       // 빈 공간: 이미지와 텍스트 사이의 공간을 유지하기 위해
@@ -295,7 +295,7 @@ Container(
       // 이미지: 왼쪽에 배치
       Image.asset(
         'assets/alrim.png', // 안전지대 위치 이미지 경로
-        height: 25, // 이미지 크기
+        height: 20, // 이미지 크기
       ),
       
       // 빈 공간: 이미지와 텍스트 사이의 공간을 유지하기 위해
@@ -313,7 +313,7 @@ children: [
       '배터리 효율을 놓치지 않았습니까?', 
       style: TextStyle(
         color: Colors.black,
-        fontSize: 11, // 글자 크기 축소
+        fontSize: 9.5, // 글자 크기 축소
       ),
     ),
   ),
@@ -344,20 +344,20 @@ children: [
 
 
 
-Container(
-  height: 76, // 세로 크기 76
-  padding: const EdgeInsets.all(16),
-  color: const Color(0xFFFFE1E1), // 배경색 FFE1E1
-  child: const Center(
-    child: Text(
-      '광고',
-      style: TextStyle(
-        color: Color(0xFF787878), // 글자 색상 787878
-        fontSize: 25, // 글자 크기 25
-      ),
-    ),
-  ),
-)
+        Container(
+          height: 76, // 세로 크기 76
+          padding: const EdgeInsets.all(16),
+          color: const Color(0xFFFFE1E1), // 배경색 FFE1E1
+          child: const Center(
+            child: Text(
+              '광고',
+              style: TextStyle(
+                color: Color(0xFF787878), // 글자 색상 787878
+                fontSize: 20, // 글자 크기 25
+              ),
+            ),
+          ),
+        )
 
      
 
@@ -372,7 +372,7 @@ Container(
           elevation: 10, // 하단바 그림자 효과 추가
           color: const Color.fromARGB(255, 58, 58, 58),
           child: BottomAppBar(
-            color: const Color.fromARGB(255, 194, 181, 181), // 하단바 배경색 설정
+            color: const Color.fromARGB(255, 255, 255, 255), // 하단바 배경색 설정
             shape: const CircularNotchedRectangle(), // 둥근 디자인 추가
             notchMargin: 8.0,
             child: Row(
@@ -430,7 +430,7 @@ Container(
      Image.asset(
        'assets/safetime.png',
 
-       height: 25,
+       height: 20,
      ),
      const SizedBox(width: 40),
      Column(
@@ -755,7 +755,7 @@ class _SettingsEditScreenState extends State<SettingsEditScreen> {
  '설정값 수정',
  style: TextStyle(
    fontWeight: FontWeight.bold,
-   fontSize: MediaQuery.of(context).size.width * 0.07,
+   fontSize: MediaQuery.of(context).size.width * 0.05,
  ),
 ),
    
@@ -844,7 +844,7 @@ Container(
         padding: const EdgeInsets.only(right: 0.0), // 이미지와 텍스트 사이 간격 없애기
         child: Image.asset(
           'assets/battery_icon.png', // 이미지 경로
-          height: 25,
+          height: 20,
         ),
       ),
       // 오른쪽에 텍스트
@@ -895,7 +895,7 @@ Container(
       '광고',
       style: TextStyle(
         color: Color(0xFF787878), // 글자 색상 787878
-        fontSize: 25, // 글자 크기 25
+        fontSize: 20, // 글자 크기 25
       ),
     ),
   ),
@@ -930,7 +930,7 @@ Widget buildSafeZoneTitle(String title) {
   //  padding: const EdgeInsets.only(top: 32.0), 
    child: Image.asset(
      imagePath,
-     height: 25,
+     height: 20,
    ),
  );
 }
@@ -939,7 +939,7 @@ Widget buildLocationRow(String label, String hint) {
     children: [
       SizedBox(
         width: 50,
-        child: Text(label, style: const TextStyle(fontSize: 25)),
+        child: Text(label, style: const TextStyle(fontSize: 20)),
       ),
       const SizedBox(width: 16),
       Padding(
@@ -1026,7 +1026,7 @@ Widget buildTimeRow(String label, String safeZone) {
       children: [
         SizedBox(
           width: 60,
-          child: Text(label, style: const TextStyle(fontSize: 25)),
+          child: Text(label, style: const TextStyle(fontSize: 20)),
         ),
         const Spacer(),
         TextButton(

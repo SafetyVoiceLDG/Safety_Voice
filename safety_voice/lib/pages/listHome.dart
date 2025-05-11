@@ -19,7 +19,7 @@ class ListHome extends StatelessWidget {
             currentDate,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: MediaQuery.of(context).size.width * 0.07,
+              fontSize: MediaQuery.of(context).size.width * 0.05,
             ),
           ),
           automaticallyImplyLeading: false,
@@ -209,7 +209,7 @@ class ListHome extends StatelessWidget {
           elevation: 10, // 하단바 그림자 효과 추가
           color: const Color.fromARGB(255, 58, 58, 58),
           child: BottomAppBar(
-            color: const Color.fromARGB(255, 194, 181, 181), // 하단바 배경색 설정
+            color: const Color.fromARGB(255, 255, 255, 255), // 하단바 배경색 설정
             shape: const CircularNotchedRectangle(), // 둥근 디자인 추가
             notchMargin: 8.0,
             child: Row(

@@ -33,7 +33,7 @@ class _CaseFileState extends State<CaseFile> {
                   "사건 파일 1",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: MediaQuery.of(context).size.width * 0.07,
+                    fontSize: MediaQuery.of(context).size.width * 0.05,
                   ),
                 ),
               ],

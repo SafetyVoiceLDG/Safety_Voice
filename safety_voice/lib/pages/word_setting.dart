@@ -88,10 +88,10 @@ class _SettingScreenState extends State<SettingScreen> {
     title: Padding(
       padding: EdgeInsets.only(top: 26, bottom: 26, left: 26),
       child: Text(
-        '쀼의 세계님의 설정 현황',
+        '이대광님의 설정 현황',
         style: TextStyle(
           fontWeight: FontWeight.bold,
-          fontSize: MediaQuery.of(context).size.width * 0.07,
+          fontSize: MediaQuery.of(context).size.width * 0.05,
         ),
       ),
     ),
@@ -132,14 +132,14 @@ class _SettingScreenState extends State<SettingScreen> {
                           children: [
                             Image.asset(
                               'assets/state.png',
-                              height: 25,
+                              height: 20,
                             ),
                             const SizedBox(width: 70),
                             Text(
                               '잠만',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 25,
+                                fontSize: 20,
                               ),
                             ),
                           ],
@@ -159,14 +159,14 @@ class _SettingScreenState extends State<SettingScreen> {
                           children: [
                             Image.asset(
                               'assets/state.png',
-                              height: 25,
+                              height: 20,
                             ),
                             const SizedBox(width: 70),
                             Text(
                               '2초 안에 3회',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 25,
+                                fontSize: 20,
                               ),
                             ),
                           ],
@@ -190,14 +190,14 @@ class _SettingScreenState extends State<SettingScreen> {
                           children: [
                             Image.asset(
                               'assets/state.png',
-                              height: 25,
+                              height: 20,
                             ),
                             const SizedBox(width: 70),
                             Text(
                               '4주 안에 5회',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 25,
+                                fontSize: 20,
                               ),
                             ),
                           ],
@@ -222,7 +222,7 @@ class _SettingScreenState extends State<SettingScreen> {
       Image.asset(
         'assets/safelocation.png', // 안전지대 위치 이미지 경로
    
-        height: 25, // 이미지 크기
+        height: 20, // 이미지 크기
       ),
       
       // 빈 공간: 이미지와 텍스트 사이의 공간을 유지하기 위해
@@ -279,7 +279,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   '광고',
                   style: TextStyle(
                     color: Color(0xFF787878),
-                    fontSize: 25,
+                    fontSize: 20,
                   ),
                 ),
               ),
@@ -293,7 +293,7 @@ class _SettingScreenState extends State<SettingScreen> {
           elevation: 10,
           color: const Color.fromARGB(255, 58, 58, 58),
           child: BottomAppBar(
-            color: const Color.fromARGB(255, 194, 181, 181),
+            color: const Color.fromARGB(255, 255, 255, 255),
             shape: const CircularNotchedRectangle(),
             notchMargin: 8.0,
             child: Row(
@@ -348,7 +348,7 @@ Widget _buildEditView() {
               children: [
                 Image.asset(
                   'assets/state.png',
-                  height: 25,
+                  height: 20,
                 ),
                 const SizedBox(width: 50),
                 Expanded(
@@ -423,7 +423,7 @@ TextButton(
                            ),
                            Image.asset(
                              'assets/recordword.png',
-                             height: 25,
+                             height: 20,
                            ),
                          ],
                        ),
@@ -509,7 +509,7 @@ TextButton(
               children: [
                 Image.asset(
                   'assets/state.png',
-                  height: 25,
+                  height: 20,
                 ),
                 const SizedBox(width: 50),
                 Expanded(
@@ -592,7 +592,7 @@ TextButton(
               children: [
                 Image.asset(
                   'assets/state.png',
-                  height: 25,
+                  height: 20,
                 ),
                 const SizedBox(width: 50),
                 Expanded(
@@ -673,7 +673,7 @@ TextButton(
           children: [
             Image.asset(
               'assets/safelocation.png',
-              height: 25,
+              height: 20,
             ),
             const SizedBox(width: 10),
             Column(
@@ -779,7 +779,7 @@ TextButton(
         children: [
           Text(
             title,
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           SizedBox(height: 8),
           Row(
@@ -852,7 +852,7 @@ Widget _buildInfoItem(String title, String value) {
           child: Text(
             title,
             style: TextStyle(
-              fontSize: 25,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -860,7 +860,7 @@ Widget _buildInfoItem(String title, String value) {
         Expanded(
           child: Text(
             value,
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
         ),
       ],
@@ -882,7 +882,7 @@ Widget _buildEmergencyContacts() {
         Text(
           '비상 연락망',
           style: TextStyle(
-            fontSize: 25,
+            fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -925,7 +925,7 @@ Widget _buildEmergencyContacts() {
         children: [
           Text(
             '비상 연락망',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           SizedBox(height: 16),
           ...List.generate(3, (index) {

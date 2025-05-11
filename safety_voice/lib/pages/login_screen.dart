@@ -111,7 +111,8 @@ class _LoginScreenState extends State<LoginScreen> {
               width: double.infinity,
               child: ElevatedButton(
 
-                onPressed: _isLoading ? null : _login,
+                onPressed: () => Navigator.pushReplacementNamed(context, '/calendarhome'),
+                //_isLoading ? null : _login,
 
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF6B7AFF),

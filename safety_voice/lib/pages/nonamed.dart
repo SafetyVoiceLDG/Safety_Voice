@@ -120,7 +120,7 @@ class _NonamedState extends State<Nonamed> {
                   "이름 없는 파일",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: MediaQuery.of(context).size.width * 0.07,
+                    fontSize: MediaQuery.of(context).size.width * 0.05
                   ),
                 ),
               ],
