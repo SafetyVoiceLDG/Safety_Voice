@@ -70,26 +70,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/
-    - assets/m4a/
-    - assets/logo.png
-    - assets/word.png
-    - assets/safety.png
-    - assets/state.png
-    - assets/safelocation.png
-    - assets/safetime.png
-    - assets/alrim.png
-    - assets/recordingList.png
-    - assets/wordRecognition.png
-    - assets/wordRecognition2.png
-    - assets/safeZone.png
-    - assets/safezone1.png
-    - assets/safezone2.png
-    - assets/safezone3.png
-    - assets/battery_icon.png
-    - assets/safeZone_word.png
-    - assets/learnimage.png
-    - assets/recordword.png
+    - assets/
  
     - assets/images/
     - assets/m4a/

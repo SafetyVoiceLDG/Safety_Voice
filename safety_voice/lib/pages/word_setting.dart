@@ -1,3 +1,4 @@
+//단어 인식
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:safety_voice/pages/setup_screen.dart';
@@ -82,29 +83,30 @@ class _SettingScreenState extends State<SettingScreen> {
       backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(80),
-       child: AppBar(
-    backgroundColor: Colors.white,
-    automaticallyImplyLeading: false, // 뒤로가기 버튼 제거
-    title: Padding(
-      padding: EdgeInsets.only(top: 26, bottom: 26, left: 26),
-      child: Text(
-        '이대광님의 설정 현황',
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: MediaQuery.of(context).size.width * 0.05,
-        ),
-      ),
-    ),
-          actions: [
+        child: AppBar(
+          automaticallyImplyLeading: false, // 뒤로가기 버튼 제거
+          title:  Text(
+            '이대광님의 설정 현황',
+              style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: MediaQuery.of(context).size.width * 0.05,
+                  ),
+            ),
+            backgroundColor: Colors.white,
+            elevation: 0,
+            actions: [
             TextButton(
               onPressed: () {
-                setState(() => isEditing = true);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SettingsEditScreen()),
+                );
               },
               child: const Text(
                 '수정',
                 style: TextStyle(
                   color: Color(0xFF787878),
-                  fontSize: 15,
+                  fontSize: 16,
                 ),
               ),
             ),
@@ -130,22 +132,32 @@ class _SettingScreenState extends State<SettingScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Image.asset(
-                              'assets/state.png',
-                              height: 20,
+                            Expanded(
+                              flex: 3,
+                              child: Align(
+                                alignment: Alignment.centerLeft, // 🔹 왼쪽 정렬
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 8.0), // 🔹 왼쪽 마진
+                                  child: Image.asset(
+                                    'assets/currentword.png',
+                                    height: 20,
+                                  ),
+                                ),
+                              ),
                             ),
-                            const SizedBox(width: 70),
-                            Text(
-                              '잠만',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
+                            Expanded(
+                              flex: 4,
+                              child: Text(
+                                '잠만',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                ),
                               ),
                             ),
                           ],
                         ),
                       ),
-                  
                        Container(
                         height: 99,
                         padding: const EdgeInsets.all(26),
@@ -157,20 +169,32 @@ class _SettingScreenState extends State<SettingScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Image.asset(
-                              'assets/state.png',
-                              height: 20,
+                            Expanded(
+                              flex: 3,
+                              child: Align(
+                                alignment: Alignment.centerLeft, // 🔹 왼쪽 정렬
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 8.0), // 🔹 왼쪽 마진
+                                  child: Image.asset(
+                                    'assets/recordnum.png',
+                                    height: 20,
+                                  ),
+                                ),
+                              ),
                             ),
-                            const SizedBox(width: 70),
-                            Text(
-                              '2초 안에 3회',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
+                            Expanded(
+                              flex: 4,
+                              child: Text(
+                                '2초 안에 3회',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                ),
                               ),
                             ),
                           ],
                         ),
+
                       ),
                       Container(
                         width: double.infinity,
@@ -188,16 +212,27 @@ class _SettingScreenState extends State<SettingScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Image.asset(
-                              'assets/state.png',
-                              height: 20,
+                            Expanded(
+                              flex: 3,
+                              child: Align(
+                                alignment: Alignment.centerLeft, // 🔹 왼쪽 정렬
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 8.0), // 🔹 왼쪽 마진
+                                  child: Image.asset(
+                                    'assets/numnum.png',
+                                    height: 20,
+                                  ),
+                                ),
+                              ),
                             ),
-                            const SizedBox(width: 70),
-                            Text(
-                              '4주 안에 5회',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
+                            Expanded(
+                              flex: 4,
+                              child: Text(
+                                '4초 안에 5회',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                ),
                               ),
                             ),
                           ],
@@ -208,60 +243,67 @@ class _SettingScreenState extends State<SettingScreen> {
                         height: 1.0,
                         color: Color(0xFFCACACA),
                       ),
-                  Container(
-  padding: const EdgeInsets.all(26),
-  decoration: const BoxDecoration(
-    border: Border(
-      bottom: BorderSide(color: Colors.black12),
-    ),
-  ),
-  child: Row(
-    mainAxisAlignment: MainAxisAlignment.start, // 모든 요소를 왼쪽으로 정렬
-    children: [
-      // 이미지: 왼쪽에 배치
-      Image.asset(
-        'assets/safelocation.png', // 안전지대 위치 이미지 경로
-   
-        height: 20, // 이미지 크기
-      ),
-      
-      // 빈 공간: 이미지와 텍스트 사이의 공간을 유지하기 위해
-      const SizedBox(width: 40),
+                      Container(
+                        padding: const EdgeInsets.all(26),
+                        decoration: const BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(color: Colors.black12),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            // 🔹 이미지 영역 (flex: 2)
+                            Expanded(
+                              flex: 3,
+                              child: Align(
+                                alignment: Alignment.centerLeft, // 🔹 왼쪽 정렬
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 8.0), // 🔹 왼쪽 마진
+                                  child: Image.asset(
+                                    'assets/number.png',
+                                    height: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
 
-      // 텍스트: 왼쪽 정렬
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start, // 텍스트 왼쪽 정렬
-        children: [
-          Row(
-            children: [
-                     
-   
-              Text('1번', style: TextStyle(color: Colors.black, fontSize: 18,)),
-              const SizedBox(width: 8),
-              Text('112', style: TextStyle(color: Colors.black,fontSize: 18)),
-            ],
-          ),
-          const SizedBox(height: 4),
-          Row(
-            children: [
-              Text('2번', style: TextStyle(color: Colors.black,fontSize: 18)),
-              const SizedBox(width: 8),
-              Text('010-1234-5678', style: TextStyle(color: Colors.black,fontSize: 18)),
-            ],
-          ),
-          const SizedBox(height: 4),
-          Row(
-            children: [
-              Text('3번', style: TextStyle(color: Colors.black,fontSize: 18)),
-              const SizedBox(width: 8),
-              Text('010-9876-5432', style: TextStyle(color: Colors.black,fontSize: 18)),
-            ],
-          ),
-        ],
-      ),
-    ],
-  ),
-),
+                            // 🔸 텍스트 영역 (flex: 3)
+                            Expanded(
+                              flex: 4,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('1번', style: TextStyle(color: Colors.black, fontSize: 14)),
+                                      const SizedBox(width: 8),
+                                      Text('112', style: TextStyle(color: Colors.black, fontSize: 14)),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Row(
+                                    children: [
+                                      Text('2번', style: TextStyle(color: Colors.black, fontSize: 14)),
+                                      const SizedBox(width: 8),
+                                      Text('010-1234-5678', style: TextStyle(color: Colors.black, fontSize: 14)),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Row(
+                                    children: [
+                                      Text('3번', style: TextStyle(color: Colors.black, fontSize: 14)),
+                                      const SizedBox(width: 8),
+                                      Text('010-9876-5432', style: TextStyle(color: Colors.black, fontSize: 14)),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+
+                      ),
                   
                     ] else ...[
                       _buildEditView(),
@@ -479,7 +521,7 @@ TextButton(
        color: isLearningCompleted 
          ? Colors.blue 
          : (isLearning ? Colors.green : Colors.red),
-       fontSize: 15,
+       fontSize: 16,
      ),
    ),
  ),
@@ -681,7 +723,7 @@ TextButton(
               children: [
                 Row(
                   children: [
-                    Text('1번', style: TextStyle(color: Colors.black, fontSize: 18,)),
+                    Text('1번', style: TextStyle(color: Colors.black, fontSize: 14,)),
                     const SizedBox(width: 8),
                     SizedBox(
                       width: 165,
@@ -700,7 +742,7 @@ TextButton(
                 const SizedBox(height: 4),
                 Row(
                   children: [
-                    Text('2번', style: TextStyle(color: Colors.black, fontSize: 18)),
+                    Text('2번', style: TextStyle(color: Colors.black, fontSize: 14)),
                     const SizedBox(width: 8),
                     SizedBox(
                       width: 165,
@@ -719,7 +761,7 @@ TextButton(
                 const SizedBox(height: 4),
                 Row(
                   children: [
-                    Text('3번', style: TextStyle(color: Colors.black, fontSize: 18)),
+                    Text('3번', style: TextStyle(color: Colors.black, fontSize: 14)),
                     const SizedBox(width: 8),
                     SizedBox(
                       width: 165,
@@ -758,7 +800,7 @@ TextButton(
           child: Text(
             '설정값 수정하기',
             style: TextStyle(
-              fontSize: 28,
+              fontSize: 20,
               color: Colors.white,
             ),
           ),

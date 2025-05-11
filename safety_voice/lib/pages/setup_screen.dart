@@ -1,3 +1,4 @@
+//안전지대
 import 'package:flutter/material.dart';
 import 'package:safety_voice/pages/word_setting.dart';
 
@@ -17,21 +18,21 @@ class _SetupScreenState extends State<SetupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-appBar: PreferredSize(
-  preferredSize: const Size.fromHeight(80), // AppBar 높이를 80으로 설정
-  child: AppBar(
-    automaticallyImplyLeading: false, // 뒤로가기 버튼 제거
-    title:  Text(
-      '이대광님의 설정 현황',
-         style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: MediaQuery.of(context).size.width * 0.05,
-            ),
-    ),
-    backgroundColor: Colors.white,
-    elevation: 0,
-    actions: [
-     TextButton(
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(80), // AppBar 높이를 80으로 설정
+        child: AppBar(
+          automaticallyImplyLeading: false, // 뒤로가기 버튼 제거
+          title:  Text(
+            '이대광님의 설정 현황',
+              style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: MediaQuery.of(context).size.width * 0.05,
+                  ),
+          ),
+          backgroundColor: Colors.white,
+          elevation: 0,
+          actions: [
+          TextButton(
               onPressed: () {
                 Navigator.push(
                   context,
@@ -46,228 +47,248 @@ appBar: PreferredSize(
                 ),
               ),
             ),
-    ],
-  ),
-),
-
-
-     body: Column(
- children: [
-   Expanded(
-     child: SingleChildScrollView(
-       child: Column(
-         children: [
-          
-          
-          
-          Container(
-             height: 99, // 높이를 99로 설정
-  padding: const EdgeInsets.all(26),
-  decoration: const BoxDecoration(
-    border: Border(
-      bottom: BorderSide(color: Colors.black12),
-    ),
-  ),
-  child: Row(
-    mainAxisAlignment: MainAxisAlignment.start, // 이미지와 스위치 사이를 왼쪽으로 정렬
-    children: [
-      
-      // 이미지: 왼쪽에 배치
-      Image.asset(
-        'assets/safety.png', // 안전지대 위치 이미지 경로
-        width: 87, // 이미지 크기
-        height: 20, // 이미지 크기
-      ),
-      
-      // 빈 공간: 이미지와 Switch 사이의 공간을 유지하기 위해
-      const SizedBox(width: 106),
-
-      // 스위치를 오른쪽 끝에 배치
-      Expanded(
-        child: Align(
-          alignment: Alignment.centerRight, // 스위치를 오른쪽으로 정렬
-          child: Switch(
- value: isSafetyEnabled,
- onChanged: (value) {
-   setState(() => isSafetyEnabled = value);
- },
- activeColor: Colors.white, // 동그란 부분 색상
- activeTrackColor: const Color(0xFF577BE5), // 활성화됐을 때 바탕 색상
- inactiveThumbColor: Colors.white, // 비활성화됐을 때 동그란 부분 색상
- inactiveTrackColor: const Color(0xFFE6E6E6), // 비활성화됐을 때 바탕 색상
-)
+          ],
         ),
       ),
-    ],
-  ),
-),
-    Container(
-              // margin: const EdgeInsets.symmetric(vertical: 8.0), // 여백 추가
-              width: double.infinity,
-              height: 1.0, // 실선 두께
-              color: Color(0xFFCACACA), // 실선 색상
-            ),
-    // 현재 상태
-    Container(
-       height: 99, // 높이를 99로 설정
-  padding: const EdgeInsets.all(26),
-  decoration: const BoxDecoration(
-    border: Border(
-      bottom: BorderSide(color: Colors.black12),
-    ),
-  ),
-  child: Row(
-    mainAxisAlignment: MainAxisAlignment.start, // 이미지와 스위치 사이를 왼쪽으로 정렬
-    children: [
-      
-      // 이미지: 왼쪽에 배치
-      Image.asset(
-        'assets/word.png', // 안전지대 위치 이미지 경로
 
-        height: 20, // 이미지 크기
-      ),
-      
-      // 빈 공간: 이미지와 Switch 사이의 공간을 유지하기 위해
-      const SizedBox(width: 106),
 
-      // 스위치를 오른쪽 끝에 배치
-      Expanded(
-        child: Align(
-          alignment: Alignment.centerRight, // 스위치를 오른쪽으로 정렬
-          child: Switch(
- value: isAlarmEnabled,
- onChanged: (value) {
-   setState(() => isAlarmEnabled = value);
- },
- activeColor: Colors.white, // 동그란 부분 색상
- activeTrackColor: const Color(0xFF577BE5), // 활성화됐을 때 바탕 색상
- inactiveThumbColor: Colors.white, // 비활성화됐을 때 동그란 부분 색상
- inactiveTrackColor: const Color(0xFFE6E6E6), // 비활성화됐을 때 바탕 색상
-)
-        ),
-      ),
-    ],
-  ),
-),
-    Container(
-              // margin: const EdgeInsets.symmetric(vertical: 8.0), // 여백 추가
-              width: double.infinity,
-              height: 1.0, // 실선 두께
-              color: Color(0xFFCACACA), // 실선 색상
-            ),
-      
-Container(
-   height: 99, // 높이를 99로 설정
-  padding: const EdgeInsets.all(26),
-  decoration: const BoxDecoration(
-    border: Border(
-      bottom: BorderSide(color: Colors.black12),
-    ),
-  ),
-  child: Row(
-    mainAxisAlignment: MainAxisAlignment.start, // 모든 요소를 왼쪽으로 정렬
-    children: [
-      // 이미지: 왼쪽에 배치
-      Image.asset(
-        'assets/state.png', // 안전지대 위치 이미지 경로
-
-        height: 20, // 이미지 크기
-      ),
-      
-      // 빈 공간: 이미지와 텍스트 사이의 공간을 유지하기 위해
-      const SizedBox(width: 70),
-
-      // 텍스트: 왼쪽 정렬
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start, // 텍스트 왼쪽 정렬
+      body: Column(
         children: [
-          Row(
-            children: [
-                           Text(
- '안전지대 1번', 
- style: TextStyle(
-   color: Colors.black,
-   fontSize: 20, // 글자 크기 축소
- )
-),
-   
-   
-            ],
-          ),
-          const SizedBox(height: 4),
-        
-        ],
-      ),
-    ],
-  ),
-),
-    Container(
-              // margin: const EdgeInsets.symmetric(vertical: 8.0), // 여백 추가
-              width: double.infinity,
-              height: 1.0, // 실선 두께
-              color: Color(0xFFCACACA), // 실선 색상
-            ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    height: 99, // 높이를 99로 설정
+                    padding: const EdgeInsets.all(26),
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(color: Colors.black12),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        // 🔹 왼쪽 이미지 (왼쪽 정렬 + 마진)
+                        Expanded(
+                          flex: 3,
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: Image.asset(
+                                'assets/safety.png',
+                                width: 87,
+                                height: 20,
+                              ),
+                            ),
+                          ),
+                        ),
 
-Container(
-  padding: const EdgeInsets.all(26),
-  decoration: const BoxDecoration(
-    border: Border(
-      bottom: BorderSide(color: Colors.black12),
-    ),
-  ),
-  child: Row(
-    mainAxisAlignment: MainAxisAlignment.start, // 모든 요소를 왼쪽으로 정렬
-    children: [
-      // 이미지: 왼쪽에 배치
-      Image.asset(
-        'assets/safelocation.png', // 안전지대 위치 이미지 경로
-   
-        height: 20, // 이미지 크기
-      ),
+                        // 🔸 오른쪽 스위치
+                        Expanded(
+                          flex: 4,
+                          child: Align(
+                            alignment: Alignment.centerRight,
+                            child: Switch(
+                              value: isSafetyEnabled,
+                              onChanged: (value) {
+                                setState(() => isSafetyEnabled = value);
+                              },
+                              activeColor: Colors.white,
+                              activeTrackColor: const Color(0xFF577BE5),
+                              inactiveThumbColor: Colors.white,
+                              inactiveTrackColor: const Color(0xFFE6E6E6),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+
+                  ),
+                  Container(
+                    // margin: const EdgeInsets.symmetric(vertical: 8.0), // 여백 추가
+                    width: double.infinity,
+                    height: 1.0, // 실선 두께
+                    color: Color(0xFFCACACA), // 실선 색상
+                  ),
+                  // 현재 상태
+                  Container(
+                    height: 99, // 높이를 99로 설정
+                    padding: const EdgeInsets.all(26),
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(color: Colors.black12),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        // 🔹 왼쪽 이미지 (왼쪽 정렬 + 마진)
+                        Expanded(
+                          flex: 3,
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: Image.asset(
+                                'assets/word.png',
+                                width: 87,
+                                height: 20,
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        // 🔸 오른쪽 스위치
+                        Expanded(
+                          flex: 4,
+                          child: Align(
+                            alignment: Alignment.centerRight,
+                            child: Switch(
+                              value: isSafetyEnabled,
+                              onChanged: (value) {
+                                setState(() => isSafetyEnabled = value);
+                              },
+                              activeColor: Colors.white,
+                              activeTrackColor: const Color(0xFF577BE5),
+                              inactiveThumbColor: Colors.white,
+                              inactiveTrackColor: const Color(0xFFE6E6E6),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+
+                  ),
+                  Container(
+                    // margin: const EdgeInsets.symmetric(vertical: 8.0), // 여백 추가
+                    width: double.infinity,
+                    height: 1.0, // 실선 두께
+                    color: Color(0xFFCACACA), // 실선 색상
+                  ),
       
-      // 빈 공간: 이미지와 텍스트 사이의 공간을 유지하기 위해
-      const SizedBox(width: 40),
+                  Container(
+                    height: 99, // 높이를 99로 설정
+                    padding: const EdgeInsets.all(26),
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(color: Colors.black12),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        // 🔹 왼쪽 이미지 (왼쪽 정렬 + 마진)
+                        Expanded(
+                          flex: 3,
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: Image.asset(
+                                'assets/state.png',
+                                height: 20,
+                              ),
+                            ),
+                          ),
+                        ),
 
-      // 텍스트: 왼쪽 정렬
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start, // 텍스트 왼쪽 정렬
-        children: [
-          Row(
-            children: [
-                     
-   
-              Text('1번', style: TextStyle(color: Colors.black, fontSize: 20,)),
-              const SizedBox(width: 8),
-              Text('학교', style: TextStyle(color: Colors.black,fontSize: 20)),
-            ],
-          ),
-          const SizedBox(height: 4),
-          Row(
-            children: [
-              Text('2번', style: TextStyle(color: Colors.black,fontSize: 20)),
-              const SizedBox(width: 8),
-              Text('집', style: TextStyle(color: Colors.black,fontSize: 20)),
-            ],
-          ),
-          const SizedBox(height: 4),
-          Row(
-            children: [
-              Text('3번', style: TextStyle(color: Colors.black,fontSize: 20)),
-              const SizedBox(width: 8),
-              Text('부모님댁', style: TextStyle(color: Colors.black,fontSize: 20)),
-            ],
-          ),
-        ],
-      ),
-    ],
-  ),
-),
-    Container(
-              // margin: const EdgeInsets.symmetric(vertical: 8.0), // 여백 추가
-              width: double.infinity,
-              height: 1.0, // 실선 두께
-              color: Color(0xFFCACACA), // 실선 색상
-            ),
+                        // 🔸 오른쪽 텍스트 (안전지대 1번)
+                        Expanded(
+                          flex: 4,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Text(
+                                '안전지대 1번',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+
+                  ),
+                  Container(
+                            // margin: const EdgeInsets.symmetric(vertical: 8.0), // 여백 추가
+                            width: double.infinity,
+                            height: 1.0, // 실선 두께
+                            color: Color(0xFFCACACA), // 실선 색상
+                          ),
+
+                  Container(
+                    padding: const EdgeInsets.all(26),
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(color: Colors.black12),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        // 🔹 이미지 영역 (flex: 3)
+                        Expanded(
+                          flex: 3,
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: Image.asset(
+                                'assets/safelocation.png',
+                                height: 20,
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        // 🔸 텍스트 영역 (flex: 4)
+                        Expanded(
+                          flex: 4,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: const [
+                                  Text('1번', style: TextStyle(color: Colors.black, fontSize: 14)),
+                                  SizedBox(width: 8),
+                                  Text('학교', style: TextStyle(color: Colors.black, fontSize: 14)),
+                                ],
+                              ),
+                              SizedBox(height: 4),
+                              Row(
+                                children: const [
+                                  Text('2번', style: TextStyle(color: Colors.black, fontSize: 14)),
+                                  SizedBox(width: 8),
+                                  Text('집', style: TextStyle(color: Colors.black, fontSize: 14)),
+                                ],
+                              ),
+                              SizedBox(height: 4),
+                              Row(
+                                children: const [
+                                  Text('3번', style: TextStyle(color: Colors.black, fontSize: 14)),
+                                  SizedBox(width: 8),
+                                  Text('부모님댁', style: TextStyle(color: Colors.black, fontSize: 14)),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+
+                  ),
+                  Container(
+                            // margin: const EdgeInsets.symmetric(vertical: 8.0), // 여백 추가
+                            width: double.infinity,
+                            height: 1.0, // 실선 두께
+                            color: Color(0xFFCACACA), // 실선 색상
+                          ),
 
        
            
@@ -438,7 +459,7 @@ children: [
        children: [
          Row(
            children: [
-             Text('1번', style: TextStyle(color: Colors.black,fontSize: 20)),
+             Text('1번', style: TextStyle(color: Colors.black,fontSize: 14)),
              const SizedBox(width: 8),
              GestureDetector(
                onTap: () => showModalBottomSheet(
@@ -453,8 +474,8 @@ children: [
                    borderRadius: BorderRadius.circular(4),
                  ),
                 child: const Text(
-  '타임 테이블 열람',
-  style: TextStyle(fontSize: 15),
+  '타임 테이블 열람람',
+  style: TextStyle(fontSize: 13),
 ),
 
                ),
@@ -465,7 +486,7 @@ children: [
          const SizedBox(height: 8),
          Row(
            children: [
-             Text('2번', style: TextStyle(color: Colors.black,fontSize: 20)),
+             Text('2번', style: TextStyle(color: Colors.black,fontSize: 14)),
              const SizedBox(width: 8),
              GestureDetector(
                onTap: () => showModalBottomSheet(
@@ -481,7 +502,7 @@ children: [
                  ),
                 child: const Text(
   '타임 테이블 열람',
-  style: TextStyle(fontSize: 15),
+  style: TextStyle(fontSize: 13),
 ),
 
                ),
@@ -491,7 +512,7 @@ children: [
          const SizedBox(height: 8),
          Row(
            children: [
-             Text('3번', style: TextStyle(color: Colors.black,fontSize: 20)),
+             Text('3번', style: TextStyle(color: Colors.black,fontSize: 14)),
              const SizedBox(width: 8),
              GestureDetector(
                onTap: () => showModalBottomSheet(
@@ -507,7 +528,7 @@ children: [
                  ),
                  child: const Text(
   '타임 테이블 열람',
-  style: TextStyle(fontSize: 15),
+  style: TextStyle(fontSize: 13),
 ),
 
                ),
@@ -614,8 +635,9 @@ class _TimeTableModalState extends State<TimeTableModal> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween, // 좌우로 배치
               children: [
+                // 🔹 왼쪽: 뒤로가기 + 타이틀
                 Row(
                   children: [
                     GestureDetector(
@@ -623,42 +645,28 @@ class _TimeTableModalState extends State<TimeTableModal> {
                       child: const Icon(Icons.arrow_back, color: Colors.black),
                     ),
                     const SizedBox(width: 16),
-                    Text(
-                      '타임 테이블', // 전달받은 안전지대 번호 표시
-                      style: const TextStyle(
+                    const Text(
+                      '타임 테이블',
+                      style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],
                 ),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 6,
-                  ),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF577BE5),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: const Text(
-                    '저장',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                    ),
-                  ),
-                ),
+
               ],
             ),
           ),
           const SizedBox(height: 10),
+
+          // 🔽 안전지대 번호
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               children: [
                 Text(
-                  '${widget.safeZone} ', // 전달받은 안전지대 번호 표시
+                  '${widget.safeZone} ',
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
@@ -667,6 +675,7 @@ class _TimeTableModalState extends State<TimeTableModal> {
               ],
             ),
           ),
+
           const SizedBox(height: 12),
           Container(
             padding: const EdgeInsets.symmetric(vertical: 8),
@@ -876,7 +885,7 @@ Container(
     child: const Text(
       '설정값 수정하기',
       style: TextStyle(
-        fontSize: 28, // 글자 크기 28
+        fontSize: 20,
         color: Colors.white, // 글자 색상 흰색
       ),
     ),
